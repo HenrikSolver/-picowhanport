@@ -28,7 +28,7 @@ else:
 led = machine.Pin("LED", machine.Pin.OUT)
 led.on()
 
-version = "4"
+version = "6"
 
 hostname = config.ID + ubinascii.hexlify(machine.unique_id()).decode()
 
@@ -134,6 +134,8 @@ while True:
              value = p1msg.split(b'(')[1].split(b'W')[0].lstrip(b'0')
          else:
              value = p1msg.split(b'(')[1].split(b'*')[0].lstrip(b'0')
+         if value[0] == b'.'[0]:
+             value = b'0' + value
          if value != OBIS_db[obis.decode()][1]:
             try:
                mqc.publish(str.encode(config.MQTTTopic + '/' + obis.decode()), value)
