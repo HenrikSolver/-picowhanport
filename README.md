@@ -13,6 +13,11 @@ Koppla ihop en 6 pinnars RJ-12 kontakt med picon enligt följande.
 Sätt ett pull upp motstånd på omkring 3 Kohm mellan 7 (UART1 Rx) 36 (3,3V) på pico. Allt enligt nedanstående schema (bidrag från @speedbird620)
 ![bild2](bilder/schema.png)
 
+##PCB
+![bild3](bilder/3drenderpcb.png)
+Ladda upp zipfilen från Gerberfiles mappen till exempelvis https://jlcpcb.com/. 
+Om du väljer att använda denna pcb behöver du inte köpa Adapterkort för rj11 kontakt.
+
 ## Mjukvara
 Installera micropython och mpremote
 * https://micropython.org/download/rp2-pico-w/
@@ -36,17 +41,20 @@ mip.install("umqtt.simple")
 
 kopiera `boot.py` och `main.py` till picon med mpremote
 
-koppla in picon till din elmätares HAN port med en rak (altså pin 1 går till pin 1 o.s.v) RJ-12 kabel. LED'en blinkar med omkring 2 Hz medan picon försöker koppla sig till WLAN. När den är uppkopplad lyser den med fast sken men släcks en kort stund för varje gång den får data från elmätaren som skickas till MQTT brokern. Denna släckning skall ske var tionde sekund. Hade det varit en fyr så hade den haft karaktären `Oc 10s`
+Koppla in picon till din elmätares HAN port med en rak (alltså pin 1 går till pin 1 o.s.v) RJ-12 kabel. LED'en blinkar med omkring 2 Hz medan picon försöker koppla sig till WLAN. När den är uppkopplad lyser den med ett fast sken men släcks en kort stund för varje gång den får data från elmätaren som skickas till MQTT brokern. Denna släckning skall ske var tionde sekund. Hade det varit en fyr så hade den haft karaktären `Oc 10s`
 
 ### komponentlista
 Detta är de delar jag använt i bygget, man kan naturligtvis köpa motsvarande någon annanstans. Du behöver också en tång för att klämma modularkontakterna.
 
 * https://www.electrokit.com/produkt/modularkontakt-6-6/
 * https://www.electrokit.com/produkt/modularkontakt-6-6-pcb/
-* https://www.electrokit.com/produkt/adapterkort-for-rj11-kontakt-2-pack/
 * https://www.electrokit.com/produkt/telekabel-6x-0-08mm%c2%b2-platt-vit-m/
 * https://www.electrokit.com/produkt/raspberry-pi-pico-w/
 * https://www.electrokit.com/produkt/metallfilmsmotstand-0-25w-3-01kohm-1-3k01/
+  
+Om du väljer att använda PCB filerna behöver du inte köpa "Adapterkort för rj11 kontakt".
+* https://www.electrokit.com/produkt/adapterkort-for-rj11-kontakt-2-pack/
+
 
 
 ![bild2](bilder/bild2.jpg)
