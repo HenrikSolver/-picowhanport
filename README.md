@@ -13,10 +13,13 @@ Koppla ihop en 6 pinnars RJ-12 kontakt med picon enligt följande.
 Sätt ett pull upp motstånd på omkring 3 Kohm mellan 7 (UART1 Rx) 36 (3,3V) på pico. Allt enligt nedanstående schema (bidrag från @speedbird620)
 ![bild2](bilder/schema.png)
 
-##PCB
+## PCB
 ![bild3](bilder/3drenderpcb.png)
 Ladda upp zipfilen från Gerberfiles mappen till exempelvis https://jlcpcb.com/. 
 Om du väljer att använda denna pcb behöver du inte köpa Adapterkort för rj11 kontakt.
+
+## Skal
+Om du har en 3D skrivare kolla i stl mappen. Skalet är designat utifrån pcb designen. 
 
 ## Mjukvara
 Installera micropython och mpremote
